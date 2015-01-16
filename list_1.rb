@@ -8,16 +8,34 @@ class List
 ## Then the Basic List
 
   def initialize()
+    @node = nil
   end
 
   # empty?
-
+  def empty?
+    @node == nil
+  end
   # head
 
   # head=
+  def head=(value)
+    unless empty?
+      @node.value = value
+    else
+      @node = Node.new
+      @node.value = value
+    end
+    self
+  end
 
   # prepend
-
+  def prepend(value)
+    tmp = Node.new
+    tmp.value = value
+    tmp.next = @node
+    @node = tmp
+    self 
+  end
   # ==
 
   # eql?
@@ -36,6 +54,11 @@ class List
   end
 
   def shift
+    unless empty?
+      old_value = @node.value
+      @node = @node.next
+    end
+    old_value = old_value || nil
   end
 
   def unshift(val)
