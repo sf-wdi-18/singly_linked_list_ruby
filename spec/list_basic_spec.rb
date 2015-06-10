@@ -65,7 +65,7 @@ describe List do
     end
   end
 
-  describe "#emtpy?" do
+  describe "#empty?" do
     it "should return true if head node is nil" do
       list = List.new
       expect(list.empty?).to be(true)
