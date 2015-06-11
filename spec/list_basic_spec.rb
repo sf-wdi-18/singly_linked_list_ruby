@@ -61,7 +61,7 @@ describe List do
     it "should insert at head if not empty" do
       list = List.new
       list.prepend(3).prepend(2)
-      expect(list.tail).to eql(3)
+      expect(list.tail.head).to eql(3)
     end
   end
 
