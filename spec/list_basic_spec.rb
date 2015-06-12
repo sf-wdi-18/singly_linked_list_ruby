@@ -113,7 +113,7 @@ describe List do
     it "should return the correct tail" do
       tail_list = List.new
       tail_list.prepend(3).prepend(2)
-      expect(@list.tail).to eql(tail_list)
+      expect(@list.tail.value).to eql(tail_list.tail.value)
     end
 
     it "should return an Error for empty list" do
